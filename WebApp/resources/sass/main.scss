@@ -1,3 +1,9 @@
-$primary: red;
+$bg-colour: #222222;
+
+
+.bg-colour{
+    background-color: $bg-colour;
+}
+
 
 @import '../node_module/bootstrap/scss/bootstrap’;
