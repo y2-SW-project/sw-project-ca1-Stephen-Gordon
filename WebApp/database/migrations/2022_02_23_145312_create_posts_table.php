@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('name');
-            $table->integer('body');
-            $table->string('image_id');
+            $table->string('body');
+            $table->integer('image_id');
             $table->timestamps();
         });
     }
