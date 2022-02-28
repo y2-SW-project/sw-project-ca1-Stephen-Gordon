@@ -34,7 +34,7 @@
       <div class="col-md-8 col-md-offset-2">
         <div class="card">
           <div class="card-header">
-            Edit customers
+            Edit Post
           </div>
           <div class="card-body">
           <!-- this block is ran if the validation code in the controller fails
@@ -50,31 +50,28 @@
             @endif
 
 
-            <form method="POST" action="{{ route('admin.customers.update', $customer->id)}}">
+            <form method="POST" action="{{ route('admin.posts.update', $post->id)}}">
               <input type="hidden" name="_token" value="{{  csrf_token()  }}">
               <input type="hidden" name="_method" value="PUT">
 
               <div class="form-group">
+                <label for="name">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $post->title) }}" />
+              </div>
+              <div class="form-group">
+                <label for="text">Description</label>
+                <input type="text" class="form-control" id="description" name="description" value="{{ old('description', $post->description) }}" />
+              </div>
+              <div class="form-group">
+                <label for="text">Body</label>
+                <input type="text" class="form-control" id="body" name="body" value="{{ old('body', $post->body) }}" />
+              </div>
+              <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('title', $customer->name) }}" />
+                <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $post->name) }}" />
               </div>
-              <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" name="address" value="{{ old('address', $customer->address) }}" />
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" name="email" value="{{ old('email', $customer->email) }}" />
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone', $customer->phone) }}" />
-              </div>
-              {{-- <div class="form-group">
-                <label for="image">Image</label>
-                <input type="text" class="form-control" id="image" name="image" value="{{ old('image', $customer->image) }}" />
-              </div> --}}
-              <a href="{{ route('admin.customers.index') }}" class="btn btn-outline">Cancel</a>
+
+              <a href="{{ route('admin.posts.index') }}" class="btn btn-outline">Cancel</a>
               <button type="submit" class="btn btn-primary float-right">Submit</button>
             </form>
           </div>

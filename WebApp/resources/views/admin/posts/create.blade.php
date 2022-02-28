@@ -20,28 +20,24 @@
                 </ul>
               </div>
             @endif
-            <form method="POST" action="{{ route('admin.customers.store')  }}">
-              <input type="hidden" name="_token" value="{{  csrf_token()  }}">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('title') }}" />
-              </div>
-              <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}" />
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" />
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}" />
-              </div>
-              {{-- <div class="form-group">
-                <label for="customer_image"> Customer Image </label>
-                <input type="file" class="form-control" id='customer_image' name="customer_image" />
-            </div> --}}
+            <form method="POST" action="{{ route('admin.posts.store')  }}">
+                <input type="hidden" name="_token" value="{{  csrf_token()  }}">
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" />
+                </div>
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <input type="text" class="form-control" id="description" name="description" value="{{ old('description') }}" />
+                </div>
+                <div class="form-group">
+                  <label for="body">Body</label>
+                  <input type="text" class="form-control" id="body" name="body" value="{{ old('body') }}" />
+                </div>
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
+                </div>
 
               <a href="{{ route('admin.customers.index') }}" class="btn btn-outline">Cancel</a>
               <button type="submit" class="btn btn-primary float-right">Submit</button>
