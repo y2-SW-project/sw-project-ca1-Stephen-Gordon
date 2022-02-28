@@ -6,14 +6,14 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Customers
-                    <a href="{{ route('admin.customers.create') }}" class="btn btn-primary float-right">Add</a>
+                    Posts
+                    <a href="{{ route('admin.posts.create') }}" class="btn btn-primary float-right">Add</a>
                   </div>
                 <div class="card-body">
-                    @if (count($customers)===0)
-                    <p>there are no Customers!</p>
+                    @if (count($posts)===0)
+                    <p>there are no posts!</p>
                     @else
-                    <table id="table-customers" class="table table-hover">
+                    <table id="table-posts" class="table table-hover">
                         <thead>
                             <th>Title</th>
                             <th>Description</th>
@@ -21,17 +21,17 @@
                             <th>Name</th>
                         </thead>
                             <tbody>
-                                @foreach ($customers as $customer)
-                                <tr data-id="{{$customer->id }}">
+                                @foreach ($posts as $post)
+                                <tr data-id="{{$post->id }}">
                                     <td>{{$post->title }}</td>
                                     <td>{{$post->description }}</td>
                                     <td>{{$post->body }}</td>
                                     <td>{{$post->name }}</td>
 
                                     <td>
-                                        <a href="{{ route('admin.customers.show', $customer->id) }}" class="btn btn-default">View</a>
-                                        <a href="{{ route('admin.customers.edit', $customer->id) }}" class="btn btn-warning">Edit</a>
-                                        <form style="display:inline-block" method="POST" action="{{ route('admin.customers.destroy', $customer->id) }}">
+                                        <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-default">View</a>
+                                        <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning">Edit</a>
+                                        <form style="display:inline-block" method="POST" action="{{ route('admin.posts.destroy', $post->id) }}">
                                           <input type="hidden" name="_method" value="DELETE">
                                           <input type="hidden" name="_token"  value="{{ csrf_token() }}">
                                           <button type="submit" class="form-cotrol btn btn-danger">Delete</a>

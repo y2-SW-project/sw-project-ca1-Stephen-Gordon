@@ -6,35 +6,32 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Customer: {{ $customer->name }}
+                    Post: {{ $post->name }}
                 </div>
 
                 <div class="card-body">
-                    <table id="table-customers" class="table table-hover">
+                    <table id="table-posts" class="table table-hover">
                             <tbody>
                                 <tr>
-                                    <td>Name</td>
-                                    <td>{{$customer->name }}</td>
+                                    <td>Title</td>
+                                    <td>{{$post->title }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Address</td>
-                                    <td>{{$customer->address }}</td>
+                                    <td>Description</td>
+                                    <td>{{$post->description }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Email</td>
-                                    <td>{{$customer->email }}</td>
+                                    <td>Body</td>
+                                    <td>{{$post->body }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Phone</td>
-                                    <td>{{$customer->phone }}</td>
+                                    <td>name</td>
+                                    <td>{{$post->name }}</td>
                                 </tr>
-                               {{--  <tr>
-                                    <td>Image</td>
-                                    <td>{{$customer->image }}</td>
-                                </tr> --}}
+
                             </tbody>
                         </table>
-                        <a href="{{ route('user.customers.index') }}" class="btn btn-primary">Back</a>
+                        <a href="{{ route('user.posts.index') }}" class="btn btn-primary">Back</a>
                 </div>
             </div>
         </div>

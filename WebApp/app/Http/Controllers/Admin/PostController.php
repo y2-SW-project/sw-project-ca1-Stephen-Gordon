@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 
 
-class PostController extends Post
+class PostController extends Controller
 {
     public function __construct()
     {
@@ -77,7 +77,7 @@ class PostController extends Post
     {
         $post = Post::findOrFail($id);
 
-        return view('admin.customers.show', [
+        return view('admin.posts.show', [
             'post' => $post
         ]);
     }
@@ -90,43 +90,43 @@ class PostController extends Post
 
         //Find or Fail check is it exists
 
-        $customer = Customer::findOrFail($id);
+        $post = Post::findOrFail($id);
 
         // Load the edit view and pass the customer to
         // that view
-        return view('admin.customers.edit', [
-            'customer' => $customer
+        return view('admin.posts.edit', [
+            'post' => $post
         ]);
     }
 
 
 
-    public function update(Request $request, $id)
+      public function update(Request $request, $id)
     {
 
         // first get the existing customer that the user is update
         //Id is passed through to make sure we update the right customer
 
-        $customer = Customer::findOrFail($id);
+        $post = Post::findOrFail($id);
         $request->validate([
-            'name' => 'required',
-            'address' =>'required|max:500',
-            'email' => 'required|email',
-            'phone' => 'required|min:6'
+            'title' => 'required',
+            'description' =>'required|max:300',
+            'body' => 'required|max:10000',
+            'name' => 'required|min:3'
         ]);
 
 
 
         // if validation passes then update existing customer
-        $customer->name = $request->input('name');
-        $customer->address = $request->input('address');
-        $customer->email = $request->input('email');
-        $customer->phone = $request->input('phone');
+        $post->title = $request->input('title');
+        $post->description = $request->input('description');
+        $post->body = $request->input('body');
+        $post->name = $request->input('name');
         //$customer->image = $request->input('image');
-        $customer->save();
+        $post->save();
 
 
-        return redirect()->route('admin.customers.index');
+        return redirect()->route('admin.posts.index');
     }
 
 
@@ -134,9 +134,9 @@ class PostController extends Post
 
     public function destroy($id)
     {
-        $customer = Customer::findOrFail($id);
-        $customer->delete();
+        $post = Post::findOrFail($id);
+        $post->delete();
 
-        return redirect()->route('admin.customers.index');
+        return redirect()->route('admin.posts.index');
     }
 }
