@@ -8,9 +8,9 @@
 
     Edit Function Loads edit.blade.php
 
-    The customer id gets passed through the function
+    The post id gets passed through the function
 
-    The View and Form then gets populated with the customer's Id  data
+    The View and Form then gets populated with the posts's Id  data
 
     The sumbit button goes to the update route. then goes to Web.php to find out where to go
 

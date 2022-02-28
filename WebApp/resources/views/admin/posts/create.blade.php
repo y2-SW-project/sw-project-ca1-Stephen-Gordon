@@ -6,7 +6,7 @@
       <div class="col-md-8 col-md-offset-2">
         <div class="card">
           <div class="card-header">
-            Add a new customer
+            Add a new post
           </div>
           <div class="card-body">
           <!-- this block is ran if the validation code in the controller fails
@@ -39,7 +39,7 @@
                   <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
                 </div>
 
-              <a href="{{ route('admin.customers.index') }}" class="btn btn-outline">Cancel</a>
+              <a href="{{ route('admin.posts.index') }}" class="btn btn-outline">Cancel</a>
               <button type="submit" class="btn btn-primary float-right">Submit</button>
             </form>
           </div>
