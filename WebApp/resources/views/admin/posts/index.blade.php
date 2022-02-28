@@ -15,20 +15,19 @@
                     @else
                     <table id="table-customers" class="table table-hover">
                         <thead>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Body</th>
                             <th>Name</th>
-                            <th>Address</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                          {{--   <th>Image</th> --}}
                         </thead>
                             <tbody>
                                 @foreach ($customers as $customer)
                                 <tr data-id="{{$customer->id }}">
-                                    <td>{{$customer->name }}</td>
-                                    <td>{{$customer->address }}</td>
-                                    <td>{{$customer->email }}</td>
-                                    <td>{{$customer->phone }}</td>
-                                   {{--  <td>{{$customer->image }}</td> --}}
+                                    <td>{{$post->title }}</td>
+                                    <td>{{$post->description }}</td>
+                                    <td>{{$post->body }}</td>
+                                    <td>{{$post->name }}</td>
+
                                     <td>
                                         <a href="{{ route('admin.customers.show', $customer->id) }}" class="btn btn-default">View</a>
                                         <a href="{{ route('admin.customers.edit', $customer->id) }}" class="btn btn-warning">Edit</a>
