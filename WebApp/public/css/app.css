@@ -14,10 +14,14 @@
  } */
 
 
-.text-colour-white{
+ .text-colour-white{
    color: #F2F2F2;
-}
+} 
 
+
+.bg-colour{
+  background-color: #000;
+}
 
 
 :root {
