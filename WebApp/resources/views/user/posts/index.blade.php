@@ -7,7 +7,7 @@
     @else
     @foreach ($posts as $post)
     <div class="row justify-content-center margin-bottom-md">
-        <div class="col-md-12">
+        <div class="col-md-8">
 
             <div class="bg-sec">
 
@@ -32,6 +32,7 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4"></div>
 
     </div>
     @endforeach
