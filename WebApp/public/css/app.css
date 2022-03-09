@@ -27,6 +27,30 @@
   border-radius: 0.25rem;
 }
 
+.padding-md {
+  padding: 24px;
+}
+
+.padding-left-md {
+  padding: 24;
+}
+
+.padding-right-md {
+  padding: 24;
+}
+
+.padding-top-md {
+  padding: 24;
+}
+
+.padding-bottom-md {
+  padding: 24;
+}
+
+.margin-bottom-md {
+  margin: 24;
+}
+
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

@@ -12,7 +12,14 @@ $bg-sec: #272627;
 $font-colour-white: #f2f2f2;
 $button-main: #ff7324;
 
+//spacing
+$padding-md: 24px;
+$padding-left-md: 24;
+$padding-right-md: 24;
+$padding-top-md: 24;
+$padding-bottom-md: 24;
 
+$margin-bottom-md: 24;
 
 
 .font-colour-white {
@@ -41,4 +48,29 @@ $button-main: #ff7324;
     font-size: 0.9rem;
     border-radius: 0.25rem;
 
+}
+
+// PADDING
+.padding-md{
+    padding: $padding-md;
+}
+
+.padding-left-md{
+    padding: $padding-left-md;
+}
+
+.padding-right-md{
+    padding: $padding-left-md;
+}
+
+.padding-top-md{
+    padding: $padding-left-md;
+}
+
+.padding-bottom-md{
+    padding: $padding-bottom-md;
+}
+
+.margin-bottom-md{
+    margin: $margin-bottom-md;
 }

@@ -2,70 +2,39 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    @if (count($posts)===0)
+    <p>there are no posts!</p>
+    @else
+    @foreach ($posts as $post)
+    <div class="row justify-content-center margin-bottom-md">
         <div class="col-md-12">
+
             <div class="bg-sec">
-                <!-- <div class="card-header">Posts</div>
 
-                <div class="card-body">
-                    @if (count($posts)===0)
-                    <p>there are no posts!</p>
-                    @else
-                    <table id="table-posts" class=" table-hover">
-                        <thead>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Body</th>
-                            <th>Name</th>
-                        </thead>
-                            <tbody>
-                                @foreach ($posts as $post)
-                                <tr class="font-colour-white" data-id="{{$post->id }}">
-                                    <td class="h3 ">{{$post->title }}</td>
-                                    <td class="h4">{{$post->description }}</td>
-                                    <td class="">{{$post->body }}</td>
-                                    <td>{{$post->name }}</td>
-                                    <td>
-                                        <a href="{{ route('user.posts.show', $post->id) }}" class="button-main">View Posts</a>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                    </table>
-                    @endif
-                </div>
-            </div> -->
 
-                <div class="row font-colour-white">
+                <div class="row font-colour-white padding-bottom-md">
                     <div class="col-md-12">
-                        @if (count($posts)===0)
-                        <p>there are no posts!</p>
-                        @else
-                        @foreach ($posts as $post)
-                        
-                        
-                            <div class="" data-id="{{$post->id }}">
-                            <td class="h3 ">{{$post->title }}</td>
-                            <td class="h4">{{$post->description }}</td>
-                            <td class="">{{$post->body }}</td>
-                            <td>{{$post->name }}</td>
-                            <td>
+
+
+                        <div data-id="{{$post->id }}">
+                            <div class="h3 padding-md">{{$post->title }}></div>
+                            <div class="h4">{{$post->description }}</div>
+                            <div class="">{{$post->body }}</div>
+                            <div>{{$post->name }}</div>
+                            <div>
                                 <a href="{{ route('user.posts.show', $post->id) }}" class="button-main">View Posts</a>
                                 </form>
-                            </td>
+                            </div>
                         </div>
-                        @endforeach
-                        </tbody>
-                        </table>
-                        @endif
-                        <div class="h3 ">{{$post->title }}>
 
-                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
+    </div>
+    @endforeach
+    @endif
     @endsection
+    </div>
