@@ -18,10 +18,10 @@
 
                         <div data-id="{{$post->id }}">
                             <div class="h3 padding-md">{{$post->title }}></div>
-                            <div class="h4">{{$post->description }}</div>
-                            <div class="">{{$post->body }}</div>
-                            <div>{{$post->name }}</div>
-                            <div>
+                            <div class="h4 padding-bottom-md">{{$post->description }}</div>
+                            <div class="p padding-bottom-md">{{$post->body }}</div>
+                            <div class="p padding-bottom-md">{{$post->name }}</div>
+                            <div class="padding-bottom-md">
                                 <a href="{{ route('user.posts.show', $post->id) }}" class="button-main">View Posts</a>
                                 </form>
                             </div>
