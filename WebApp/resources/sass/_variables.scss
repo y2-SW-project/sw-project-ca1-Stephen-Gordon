@@ -1,3 +1,6 @@
+$bg-colour: #222222;
+
+$primary: #f2f2f2;
 // Body
 $body-bg: #f8fafc;
 
@@ -20,6 +23,7 @@ $padding-top-md: 24;
 $padding-bottom-md: 24;
 
 $margin-bottom-md: 24;
+$margin-md: 24;
 
 
 .font-colour-white {
@@ -50,6 +54,8 @@ $margin-bottom-md: 24;
 
 }
 
+
+
 // PADDING
 .padding-md{
     padding: $padding-md;
@@ -74,3 +80,14 @@ $margin-bottom-md: 24;
 .margin-bottom-md{
     margin-bottom: $margin-bottom-md;
 }
+
+.margin-md{
+    margin: $margin-md;
+}
+
+.bg-colour{
+    background-color: $bg-colour;
+}
+
+
+@import '../node_module/bootstrap/scss/bootstrap’;
