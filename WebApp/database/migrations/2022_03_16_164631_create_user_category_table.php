@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('user_category', function (Blueprint $table) {
             $table->id();
-            $table->user_id();
-            $table->category_id();
+            $table->bigInteger('user_id');
+            $table->bigInteger('category_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
+            $table->foreign('category_id')->references('id')->on('category')->onUpdate('cascade')->onDelete('restrict');
         });
     }
 
