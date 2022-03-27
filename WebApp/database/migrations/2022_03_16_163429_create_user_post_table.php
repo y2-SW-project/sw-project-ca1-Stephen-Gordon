@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('user_post', function (Blueprint $table) {
             $table->id();
-            $table->user_id();
-            $table->post_id();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('post_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
-            $table->foreign('post_id')->references('id')->on('roles')->onUpdate('cascade')->onDelete('restrict');
+            $table->foreign('post_id')->references('id')->on('posts')->onUpdate('cascade')->onDelete('restrict');
         });
     }
 
