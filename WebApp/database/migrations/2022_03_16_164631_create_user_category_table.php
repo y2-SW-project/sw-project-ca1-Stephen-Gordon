@@ -19,8 +19,8 @@ return new class extends Migration
             $table->bigInteger('category_id')->unsigned();
             $table->timestamps();
 
-            // $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
-            // $table->foreign('category_id')->references('id')->on('category')->onUpdate('cascade')->onDelete('restrict');
+            //$table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
+            //$table->foreign('category_id')->references('id')->on('category')->onUpdate('cascade')->onDelete('restrict');
         });
     }
 

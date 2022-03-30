@@ -12,7 +12,7 @@ class Comment extends Model
 
     public function comment()
     {
-        return $this->belongsToMany('App\Models\User', 'user_comment');
+        return $this->belongsToMany('App\Models\Post', 'comment');
     }
 
 }

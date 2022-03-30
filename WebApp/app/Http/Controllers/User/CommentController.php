@@ -15,13 +15,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('user.posts.index', [
-            'posts' => $posts,
-            'comment' => $comments
-        ]);
 
-        
+        $comments = Comment::all();
+        return view('user.posts.index', [
+            'comments' => $comments
+        ]);
     }
 
     /**
