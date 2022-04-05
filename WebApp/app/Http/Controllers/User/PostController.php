@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -16,12 +17,13 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+        $comments = Comment::all();
         return view('user.posts.index', [
             'posts' => $posts,
-            'comment' => $comments
+            'comments' => $comments
         ]);
 
-        
+
     }
 
     /**
@@ -54,8 +56,10 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
+        $comments = Comment::findOrFail($id);
         return view('user.posts.show', [
-            'post' => $post
+            'post' => $post,
+            'comments' => $comments
         ]);
     }
 

@@ -10,9 +10,9 @@ class Comment extends Model
     use HasFactory;
 
 
-    public function comment()
+    public function comments()
     {
-        return $this->belongsToMany('App\Models\Post', 'comment');
+        return $this->belongsToMany('App\Models\Post', 'comments');
     }
 
 }
