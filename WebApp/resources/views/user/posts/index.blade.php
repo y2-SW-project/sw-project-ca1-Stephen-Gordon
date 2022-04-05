@@ -6,6 +6,14 @@
     <p>there are no posts!</p>
     @else
     @foreach ($posts as $post)
+
+    <div class="row justify-content-center margin-bottom-md">
+        <div class="col-md-12">
+            <a href="{{ route('user.posts.create') }}" class="btn btn-primary float-right">Add</a>
+        </div>
+
+      </div>
+
     <div class="row justify-content-center margin-bottom-md">
         <div class="col-md-8">
                 <div class="bg-sec font-colour-white padding-bottom-md">
@@ -25,7 +33,7 @@
 
         <!-- Side column -->
 
-    
+
         <div class="col-md-4 bg-sec font-colour-white">
             <div data-id="{{$post->id }}">
                 <div class="h3 padding-md">{{$post->title }}</div>

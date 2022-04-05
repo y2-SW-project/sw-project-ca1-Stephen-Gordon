@@ -33,7 +33,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.posts.create');
     }
 
     /**
@@ -44,7 +44,35 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // when user clicks submit on the create view above
+        // the customer will be stored in the DB
+        $request->validate([
+            'title' => 'required',
+            'description' =>'required|max:300',
+            'body' => 'required|max:10000',
+            'name' => 'required|min:3'
+            //'customer_image' => 'file|image'
+        ]);
+
+
+
+
+        //Makes a Post Object
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->description = $request->input('description');
+        $post->body = $request->input('body');
+        $post->name = $request->input('name');
+        //$customer->image_location =  $filename;
+
+
+        //Puts them in the customer variable
+        //Customer is now an object
+        //Saves it to the database
+        $post->save();
+
+        //Then goes back to index if everything is correct
+        return redirect()->route('user.posts.index');
     }
 
     /**

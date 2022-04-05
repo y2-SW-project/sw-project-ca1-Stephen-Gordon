@@ -16,8 +16,12 @@ Route::get('user/home', [App\Http\Controllers\User\HomeController::class, 'index
 
 
 //USER
+Route::get('user/posts/create', [UserPostController::class, 'create'])->name('user.posts.create');
 Route::get('user/posts/', [UserPostController::class, 'index'])->name('user.posts.index');
 Route::get('user/posts/{id}', [UserPostController::class, 'show'])->name('user.posts.show');
+Route::post('user/posts/store', [UserPostController::class, 'store'])->name('user.posts.store');
+
+
 
 Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->name('admin.posts.create');
 //ADMIN
