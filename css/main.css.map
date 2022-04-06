@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../WebApp/resources/sass/main.scss"
-    ],
-    "names": [],
-    "file": "main.css"
-}
