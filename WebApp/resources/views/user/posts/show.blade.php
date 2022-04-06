@@ -11,9 +11,7 @@
                         <div class="h4 padding-md">{{$post->description }}</div>
                         <div class="p padding-md">{{$post->body }}</div>
                         <div class="p padding-md">{{$post->name }}</div>
-                        <div class="margin-md">
-                            <a href="{{ route('user.posts.index') }}" class=" button-main">Back</a>
-                        </div>
+                        
 
                     </div>
                 </div>

@@ -2,50 +2,64 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    @if (count($posts)===0)
+    <p>there are no posts!</p>
+    @else
+    <div class="row justify-content-center margin-bottom-md">
         <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    Posts
-                    <a href="{{ route('admin.posts.create') }}" class="btn btn-primary float-right">Add</a>
-                  </div>
-                <div class="card-body">
-                    @if (count($posts)===0)
-                    <p>there are no posts!</p>
-                    @else
-                    <table id="table-posts" class="table table-hover">
-                        <thead>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Body</th>
-                            <th>Name</th>
-                        </thead>
-                            <tbody>
-                                @foreach ($posts as $post)
-                                <tr data-id="{{$post->id }}">
-                                    <td>{{$post->title }}</td>
-                                    <td>{{$post->description }}</td>
-                                    <td>{{$post->body }}</td>
-                                    <td>{{$post->name }}</td>
+            <a href="{{ route('admin.posts.create') }}" class="btn btn-primary float-right">Add</a>
+        </div>
 
-                                    <td>
-                                        <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-default">View</a>
-                                        <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning">Edit</a>
+      </div>
+    @foreach ($posts as $post)
+
+    
+
+    <div class="row justify-content-center margin-bottom-md">
+        <div class="col-md-8">
+                <div class="bg-sec font-colour-white padding-bottom-md">
+                        <div data-id="{{$post->id }}">
+                            <div class="h3 padding-md">{{$post->title }}</div>
+                            <div class="h4 padding-bottom-md">{{$post->description }}</div>
+                            <div class="p padding-bottom-md">{{$post->body }}</div>
+                            <div class="p padding-bottom-md">{{$post->name }}</div>
+                            <div class="padding-bottom-md">
+                                <a href="{{ route('admin.posts.show', $post->id) }}" class="button-main">View Posts</a>
+                                <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning">Edit</a>
                                         <form style="display:inline-block" method="POST" action="{{ route('admin.posts.destroy', $post->id) }}">
                                           <input type="hidden" name="_method" value="DELETE">
                                           <input type="hidden" name="_token"  value="{{ csrf_token() }}">
                                           <button type="submit" class="form-cotrol btn btn-danger">Delete</a>
                                         </form>
-                                      </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                    </table>
-                    @endif
+                            </div>
+                        </div>
+                </div>
+        </div>
+
+
+        <!-- Side column -->
+
+
+        <div class="col-md-4 bg-sec font-colour-white">
+            <div data-id="{{$post->id }}">
+                <div class="h3 padding-md">{{$post->title }}</div>
+                <div class="h4 padding-md">{{$post->description }}</div>
+                <!-- <div class="p padding-bottom-md">{{$post->body }}</div>
+                <div class="p padding-bottom-md">{{$post->name }}</div> -->
+                <div class="padding-md">
+                    <a href="{{ route('admin.posts.show', $post->id) }}" class="button-main">View Posts</a>
+                    <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning">Edit</a>
+                                        <form style="display:inline-block" method="POST" action="{{ route('admin.posts.destroy', $post->id) }}">
+                                          <input type="hidden" name="_method" value="DELETE">
+                                          <input type="hidden" name="_token"  value="{{ csrf_token() }}">
+                                          <button type="submit" class="form-cotrol btn btn-danger">Delete</a>
+                                        </form>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-@endsection
+    </div>
+    @endforeach
+    @endif
+    @endsection
+    </div>

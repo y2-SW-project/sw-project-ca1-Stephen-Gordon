@@ -27,26 +27,38 @@
 }
 
 .padding-md {
-  padding: 24px;
+  padding: 2px;
 }
 
 .padding-left-md {
-  padding: 24;
+  padding-left: 24;
 }
 
 .padding-right-md {
-  padding: 24;
+  padding-right: 24;
 }
 
 .padding-top-md {
-  padding: 24;
+  padding-top: 24;
 }
 
 .padding-bottom-md {
-  padding: 24;
+  padding-bottom: 24;
 }
 
 .margin-bottom-md {
+  margin-bottom: 24;
+}
+
+.margin-left-md {
+  margin-left: 24;
+}
+
+.margin-md {
   margin: 24;
+}
+
+.bg-colour {
+  background-color: #222222;
 }
 /*# sourceMappingURL=app.css.map */

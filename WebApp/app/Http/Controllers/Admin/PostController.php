@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 
@@ -20,9 +21,10 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+        $comments = Comment::all();
         return view('admin.posts.index', [
-            // the view can see the customers (the green one)
-            'posts' => $posts
+            'posts' => $posts,
+            'comments' => $comments
         ]);
     }
 
@@ -76,9 +78,10 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
-
+        $comments = Comment::where('post_id', $id)->get();
         return view('admin.posts.show', [
-            'post' => $post
+            'post' => $post,
+            'comments' => $comments
         ]);
     }
 
