@@ -32,6 +32,8 @@ class PostController extends Controller
         return view('user.posts.create');
     }
 
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -47,7 +49,6 @@ class PostController extends Controller
             'description' =>'required|max:300',
             'body' => 'required|max:10000',
             'name' => 'required|min:3'
-            //'customer_image' => 'file|image'
         ]);
 
 
@@ -60,16 +61,38 @@ class PostController extends Controller
         $post->body = $request->input('body');
         $post->name = $request->input('name');
         //$customer->image_location =  $filename;
-
-
-        //Puts them in the customer variable
-        //Customer is now an object
-        //Saves it to the database
         $post->save();
 
-        //Then goes back to index if everything is correct
         return redirect()->route('user.posts.index');
     }
+
+
+
+    public function storeComment(Request $request)
+    {
+        // when user clicks submit on the create view above
+        // the customer will be stored in the DB
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required|max:10000'
+
+        ]);
+
+
+       // $comments = Comment::where('post_id', $id)->get();
+        $comments = new Comment();
+        $comments->title = $request->input('title');
+        $comments->body = $request->input('body');
+        $comments->user_id = $request->input(1);
+        $comments->post_id = $request->input(1);
+
+       // $comments->post_id = $request->input('post_id');
+        $comments->save();
+
+        return redirect()->route('user.posts.index');
+    }
+
+
 
     /**
      * Display the specified resource.

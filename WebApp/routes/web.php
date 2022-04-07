@@ -3,7 +3,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\PostController as UserPostController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
-
+use App\Http\Controllers\Admin\AdvertisementController as AdminAdvertisementController;
 
 Auth::routes();
 
@@ -17,9 +17,11 @@ Route::get('user/home', [App\Http\Controllers\User\HomeController::class, 'index
 
 //USER
 Route::get('user/posts/create', [UserPostController::class, 'create'])->name('user.posts.create');
+Route::get('user/posts/{id}', [UserPostController::class, 'create'])->name('user.posts.createComment');
 Route::get('user/posts/', [UserPostController::class, 'index'])->name('user.posts.index');
 Route::get('user/posts/{id}', [UserPostController::class, 'show'])->name('user.posts.show');
 Route::post('user/posts/store', [UserPostController::class, 'store'])->name('user.posts.store');
+Route::post('user/posts/storeComment', [UserPostController::class, 'storeComment'])->name('user.posts.storeComment');
 
 
 

@@ -5,5 +5,236 @@
 @import 'variables';
 
 // Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+$bg-colour: #222222;
+
+$primary: #f2f2f2;
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Roboto',
+sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+$bg-main: #222222;
+$bg-sec: #272627;
+$font-colour-white: #f2f2f2;
+$orange: #ff7324;
+
+//spacing
+$padding-md: 24px;
+$padding-left-md: 24;
+$padding-right-md: 24;
+$padding-top-md: 24;
+$padding-bottom-md: 24;
+
+$margin-bottom-md: 24;
+$margin-md: 24;
+$margin-left-md: 24;
 
 
+
+
+//TEXT STYLES
+
+
+.h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 150%;
+}
+
+.h2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 150%;
+}
+
+.h3 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 150%;
+}
+
+.h4 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 150%;
+}
+
+.h5 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 150%;
+}
+
+.h6 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 150%;
+}
+
+.p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.caption {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 150%;
+}
+
+
+
+
+.card {
+    padding: $padding-md;
+    border: 1px solid #FFE3D3;
+    border-radius: 4px;
+    background-color: $bg-sec;
+    color: $font-colour-white;
+    box-shadow: 0 2px 4px 0 rgba(255, 227, 211);
+    transition: 0.3s;
+}
+
+
+.font-colour-white {
+    color: $font-colour-white;
+}
+
+
+
+
+//COLOURS
+.bg-main {
+    background-color: $bg-main;
+}
+
+.bg-sec {
+    background-color: $bg-sec;
+}
+
+
+
+
+.button-main {
+    background-color: $orange;
+    color: $font-colour-white;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.6;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.9rem;
+    border-radius: 0.25rem;
+
+}
+
+.btn {
+    background: #FF7324;
+    border: 1px solid #FFE3D3;
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px 12px;
+}
+
+
+
+// PADDING & MARGIN
+.padding-md {
+    padding: $padding-md;
+}
+
+.padding-left-md {
+    padding-left: $padding-left-md;
+}
+
+.padding-right-md {
+    padding-right: $padding-left-md;
+}
+
+.padding-top-md {
+    padding-top: $padding-left-md;
+}
+
+.padding-bottom-md {
+    padding-bottom: $padding-bottom-md;
+}
+
+.margin-bottom-md {
+    margin-bottom: $margin-bottom-md;
+}
+
+.margin-left-md {
+    margin-left: $margin-left-md;
+}
+
+.margin-md {
+    margin: $margin-md;
+}
+
+.bg-colour {
+    background-color: $bg-colour;
+}
+
+
+
+//FORM
+.form{
+    background: #222222;
+border: 1px solid #FFE3D3;
+box-sizing: border-box;
+border-radius: 9.24324px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 6.16216px 0px;
+}
+
+.formbody{
+    position: static;
+    width: 1108px;
+    height: 352px;
+    left: 0px;
+    top: -46px;
+
+    background: #222222;
+    border: 1px solid #FFE3D3;
+    box-sizing: border-box;
+    border-radius: 9.24324px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 6.16216px 0px;
+}
