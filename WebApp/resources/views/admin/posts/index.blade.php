@@ -5,19 +5,24 @@
     @if (count($posts)===0)
     <p>there are no posts!</p>
     @else
-    <div class="row justify-content-center margin-bottom-md">
-        <div class="col-md-12">
-            <a href="{{ route('admin.posts.create') }}" class="btn btn-primary float-right">Add</a>
+    <div class="row margin-bottom-md">
+        <div class="col-md-6">
+            <a href="{{ route('admin.posts.create') }}" class="btn btn-primary float-right">Add Post</a>
+        </div>
+        <div class="col-md-6">
+            <a href="{{ route('admin.advertisements.create') }}" class="btn btn-primary float-right">Add an Advertisement</a>
         </div>
 
     </div>
-    @foreach ($posts as $post)
 
 
 
-    <div class="row justify-content-center margin-bottom-md">
+
+
+    <div class="row margin-bottom-md">
         <div class="col-md-8">
-            <div class="card">
+            @foreach ($posts as $post)
+            <div class="card margin-bottom-md">
                 <div data-id="{{$post->id }}">
                     <div class="h3 padding-md">{{$post->title }}</div>
                     <div class="h5 padding-bottom-md">{{$post->description }}</div>
@@ -35,20 +40,21 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
 
 
         <!-- Side column -->
 
-
-        <div class="col-md-4 ">
-            <div class="card" data-id="{{$post->id }}">
-                <div class="h3 margin-bottom-md">{{$post->title }}</div>
-                <div class="h5 margin-bottom-md">{{$post->description }}</div>
+        <div class="col-md-4">
+            @foreach ($advertisements as $advertisement)
+            <div class="Adcard margin-bottom-md" data-id="{{$advertisement->id }}">
+                <div class="h3 margin-bottom-md">{{$advertisement->title }}</div>
+                <div class="h5 margin-bottom-md">{{$advertisement->description }}</div>
 
                 <div class="">
-                    <a href="{{ route('admin.posts.show', $post->id) }}" class="button-main">View Post</a>
-                    <a href="{{ route('admin.posts.edit', $post->id) }}" class="button-main">Edit</a>
+                    <a href="{{ route('admin.advertisements.show', $advertisement->id) }}" class="button-main">View Advertisement</a>
+                    <a href="{{ route('admin.advertisements.edit', $advertisement->id) }}" class="button-main">Edit</a>
                     <form style="display:inline-block" method="POST"
                         action="{{ route('admin.posts.destroy', $post->id) }}">
                         <input type="hidden" name="_method" value="DELETE">
@@ -57,10 +63,11 @@
                     </form>
                 </div>
             </div>
+            @endforeach
         </div>
-
     </div>
-    @endforeach
+
+
     @endif
     @endsection
 </div>

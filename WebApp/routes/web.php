@@ -24,13 +24,24 @@ Route::post('user/posts/store', [UserPostController::class, 'store'])->name('use
 Route::post('user/posts/storeComment', [UserPostController::class, 'storeComment'])->name('user.posts.storeComment');
 
 
-
+//ADMIN ROUTES
 Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->name('admin.posts.create');
-//ADMIN
+Route::get('/admin/advertisements/create', [AdminAdvertisementController::class, 'create'])->name('admin.advertisements.create');
+
 Route::get('/admin/posts/', [AdminPostController::class, 'index'])->name('admin.posts.index');
 Route::get('/admin/posts/{id}', [AdminPostController::class, 'show'])->name('admin.posts.show');
 
-//CRUD
+
+
+//AD CRUD
+
+Route::get('/admin/advertisements/{id}', [AdminAdvertisementController::class, 'show'])->name('admin.advertisements.show');
+Route::get('/admin/advertisements/{id}/edit', [AdminAdvertisementController::class, 'edit'])->name('admin.advertisements.edit');
+Route::post('/admin/advertisements/store', [AdminAdvertisementController::class, 'store'])->name('admin.advertisements.store');
+Route::put('/admin/advertisements/{id}', [AdminAdvertisementController::class, 'update'])->name('admin.advertisements.update');
+Route::delete('/admin/advertisements/{id}', [AdminAdvertisementController::class, 'destroy'])->name('admin.advertisements.destroy');
+
+//POST CRUD
 
 Route::get('/admin/posts/{id}/edit', [AdminPostController::class, 'edit'])->name('admin.posts.edit');
 Route::post('/admin/posts/store', [AdminPostController::class, 'store'])->name('admin.posts.store');

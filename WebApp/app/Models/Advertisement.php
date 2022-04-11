@@ -12,7 +12,7 @@ class Advertisement extends Model
 
     public function advertisement()
     {
-        return $this->belongsToMany('App\Models\Advertisement', 'user_advertisement');
+        return $this->belongsToMany('App\Models\User', 'user_advertisement');
 
     }
 

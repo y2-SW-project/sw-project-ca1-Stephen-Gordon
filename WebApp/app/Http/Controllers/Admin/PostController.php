@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Comment;
+use App\Models\Advertisement;
 use Illuminate\Http\Request;
 
 
@@ -21,10 +22,13 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+
         $comments = Comment::all();
+        $advertisements = Advertisement::all();
         return view('admin.posts.index', [
             'posts' => $posts,
-            'comments' => $comments
+            'comments' => $comments,
+            'advertisements' => $advertisements
         ]);
     }
 
@@ -50,7 +54,6 @@ class PostController extends Controller
             'description' =>'required|max:300',
             'body' => 'required|max:10000',
             'name' => 'required|min:3'
-            //'customer_image' => 'file|image'
         ]);
 
 
@@ -79,9 +82,11 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $comments = Comment::where('post_id', $id)->get();
+        $advertisements = Advertisement::all();
         return view('admin.posts.show', [
             'post' => $post,
-            'comments' => $comments
+            'comments' => $comments,
+            'advertisements' => $advertisements
         ]);
     }
 

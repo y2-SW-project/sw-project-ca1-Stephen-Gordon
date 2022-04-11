@@ -6,11 +6,9 @@
       <div class="col-md-8 col-md-offset-2">
         <div class="card">
           <div class="card-header">
-            Add a new post
+            Add a new Advertisement
           </div>
           <div class="card-body">
-          <!-- this block is ran if the validation code in the controller fails
-          this code looks after displaying the correct error message to the user -->
             @if ($errors->any())
               <div class="alert alert-danger">
                 <ul>
@@ -20,7 +18,7 @@
                 </ul>
               </div>
             @endif
-            <form method="POST" action="{{ route('admin.posts.store')  }}">
+            <form method="POST" action="{{ route('admin.advertisements.store')  }}">
                 <input type="hidden" name="_token" value="{{  csrf_token()  }}">
                 <div class="form-group">
                   <label for="title">Title</label>
@@ -35,9 +33,10 @@
                   <input type="text" class="form-control" id="body" name="body" value="{{ old('body') }}" />
                 </div>
                 <div class="form-group">
-                    <label for="name"></label>
-                    <input type="hidden" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}" />
+                  <label for="business_name">Business Name</label>
+                  <input type="text" class="form-control" id="business_name" name="business_name" value="{{ old('business_name') }}" />
                 </div>
+
               <a href="{{ route('admin.posts.index') }}" class="btn btn-outline">Cancel</a>
               <button type="submit" class="btn btn-primary float-right">Submit</button>
             </form>

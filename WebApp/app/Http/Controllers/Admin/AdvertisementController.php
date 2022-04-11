@@ -31,7 +31,7 @@ class AdvertisementController extends Controller
 
     public function create()
     {
-        return view('admin.posts.create');
+        return view('admin.advertisements.create');
     }
 
 
@@ -44,10 +44,9 @@ class AdvertisementController extends Controller
         // the customer will be stored in the DB
         $request->validate([
             'title' => 'required',
-            'description' =>'required|max:300',
+            'description' =>'required|max:800',
             'body' => 'required|max:10000',
-            'name' => 'required|min:3'
-            //'customer_image' => 'file|image'
+            'business_name' => 'required'
         ]);
 
 
@@ -58,16 +57,10 @@ class AdvertisementController extends Controller
         $advertisement->title = $request->input('title');
         $advertisement->description = $request->input('description');
         $advertisement->body = $request->input('body');
-        $advertisement->name = $request->input('name');
-        //$customer->image_location =  $filename;
+        $advertisement->business_name = $request->input('business_name');
 
-
-        //Puts them in the customer variable
-        //Customer is now an object
-        //Saves it to the database
         $advertisement->save();
 
-        //Then goes back to index if everything is correct
         return redirect()->route('admin.posts.index');
     }
 
@@ -76,7 +69,7 @@ class AdvertisementController extends Controller
     {
         $advertisement = Advertisement::findOrFail($id);
 
-        return view('admin.posts.show', [
+        return view('admin.advertisements.show', [
             'advertisement' => $advertisement
 
         ]);
@@ -94,7 +87,7 @@ class AdvertisementController extends Controller
 
         // Load the edit view and pass the customer to
         // that view
-        return view('admin.posts.edit', [
+        return view('admin.advertisements.edit', [
             'advertisement' => $advertisement
         ]);
     }
@@ -110,9 +103,9 @@ class AdvertisementController extends Controller
         $advertisement = Advertisement::findOrFail($id);
         $request->validate([
             'title' => 'required',
-            'description' =>'required|max:300',
+            'description' =>'required|max:800',
             'body' => 'required|max:10000',
-            'name' => 'required|min:3'
+            'business_name' => 'required'
         ]);
 
 
@@ -121,7 +114,7 @@ class AdvertisementController extends Controller
         $advertisement->title = $request->input('title');
         $advertisement->description = $request->input('description');
         $advertisement->body = $request->input('body');
-        $advertisement->name = $request->input('name');
+        $advertisement->business_name = $request->input('business_name');
         //$customer->image = $request->input('image');
         $advertisement->save();
 

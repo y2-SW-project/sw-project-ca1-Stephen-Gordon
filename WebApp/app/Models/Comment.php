@@ -10,9 +10,13 @@ class Comment extends Model
     use HasFactory;
 
 
-    public function comments()
+    /* public function comments()
     {
         return $this->belongsToMany('App\Models\Post', 'comments');
+    } */
+    public function comments()
+    {
+        return $this->belongsTo(related:Post::class);
     }
 
 }

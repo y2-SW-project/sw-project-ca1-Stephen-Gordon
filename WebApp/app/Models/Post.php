@@ -13,7 +13,10 @@ class Post extends Model
     public function post()
     {
         return $this->belongsToMany('App\Models\User', 'user_post');
-        
+
+
     }
+
+
 
 }

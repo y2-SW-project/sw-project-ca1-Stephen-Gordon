@@ -35,8 +35,8 @@
                   <input type="text" class="form-control " id="body" name="body" value="{{ old('body') }}" />
                 </div>
                 <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
+                  <label for="name"></label>
+                  <input type="hidden" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}" />
                 </div>
 
               <a href="{{ route('user.posts.index') }}" class="btn btn-outline">Cancel</a>

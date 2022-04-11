@@ -8,7 +8,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 $bg-colour: #222222;
-
+$bg-ad: #212131;
 $primary: #f2f2f2;
 // Body
 $body-bg: #f8fafc;
@@ -113,6 +113,16 @@ $margin-left-md: 24;
     border: 1px solid #FFE3D3;
     border-radius: 4px;
     background-color: $bg-sec;
+    color: $font-colour-white;
+    box-shadow: 0 2px 4px 0 rgba(255, 227, 211);
+    transition: 0.3s;
+}
+
+.Adcard{
+    padding: $padding-md;
+    border: 1px solid #FFE3D3;
+    border-radius: 4px;
+    background-color: $bg-ad;
     color: $font-colour-white;
     box-shadow: 0 2px 4px 0 rgba(255, 227, 211);
     transition: 0.3s;
