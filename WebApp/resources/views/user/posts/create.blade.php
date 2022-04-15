@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-group">
                   <label for="body">Body</label>
-                  <input type="text" class="form-control " id="body" name="body" value="{{ old('body') }}" />
+                  <input type="text-area" class="form-control " rows="3" id="body" name="body" value="{{ old('body') }}" />
                 </div>
                 <div class="form-group">
                   <label for="name"></label>

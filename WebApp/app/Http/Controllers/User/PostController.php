@@ -3,6 +3,8 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Comment;
+use App\Models\Category;
+use App\Models\Advertisement;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -15,10 +17,12 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+        $advertisements = Advertisement::all();
         $comments = Comment::all();
         return view('user.posts.index', [
             'posts' => $posts,
-            'comments' => $comments
+            'comments' => $comments,
+            'advertisements' => $advertisements
         ]);
     }
 
@@ -74,7 +78,9 @@ class PostController extends Controller
         // the customer will be stored in the DB
         $request->validate([
             'title' => 'required',
-            'body' => 'required|max:10000'
+            'body' => 'required|max:10000',
+            'user_id' => 'required',
+            'post_id' => 'required'
 
         ]);
 
@@ -83,8 +89,8 @@ class PostController extends Controller
         $comments = new Comment();
         $comments->title = $request->input('title');
         $comments->body = $request->input('body');
-        $comments->user_id = $request->input(1);
-        $comments->post_id = $request->input(1);
+        $comments->user_id = $request->input('user_id');
+        $comments->post_id = $request->input('post_id');
 
        // $comments->post_id = $request->input('post_id');
         $comments->save();
@@ -104,9 +110,11 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $comments = Comment::where('post_id', $id)->get();
+        $advertisements = Advertisement::all();
         return view('user.posts.show', [
             'post' => $post,
-            'comments' => $comments
+            'comments' => $comments,
+            'advertisements' => $advertisements
         ]);
     }
 

@@ -47,8 +47,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        // when user clicks submit on the create view above
-        // the customer will be stored in the DB
+
         $request->validate([
             'title' => 'required',
             'description' =>'required|max:300',
@@ -59,22 +58,41 @@ class PostController extends Controller
 
 
 
-        //Makes a Post Object
         $post = new Post();
         $post->title = $request->input('title');
         $post->description = $request->input('description');
         $post->body = $request->input('body');
         $post->name = $request->input('name');
-        //$customer->image_location =  $filename;
 
-
-        //Puts them in the customer variable
-        //Customer is now an object
-        //Saves it to the database
         $post->save();
 
-        //Then goes back to index if everything is correct
         return redirect()->route('admin.posts.index');
+    }
+
+
+    public function storeComment(Request $request)
+    {
+
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required|max:10000',
+            'user_id' => 'required',
+            'post_id' => 'required'
+
+        ]);
+
+
+       // $comments = Comment::where('post_id', $id)->get();
+        $comments = new Comment();
+        $comments->title = $request->input('title');
+        $comments->body = $request->input('body');
+        $comments->user_id = $request->input('user_id');
+        $comments->post_id = $request->input('post_id');
+
+       // $comments->post_id = $request->input('post_id');
+        $comments->save();
+
+        return redirect()->route('user.posts.index');
     }
 
 

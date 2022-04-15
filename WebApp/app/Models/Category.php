@@ -10,9 +10,14 @@ class Category extends Model
     use HasFactory;
 
 
-    public function category()
+    /* public function category()
     {
         return $this->belongsToMany('App\Models\User', 'user_category');
+    } */
+
+    public function categories()
+    {
+        return $this->belongsTo(related:Post::class);
     }
 
 }

@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\PostController as UserPostController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\Admin\AdvertisementController as AdminAdvertisementController;
+use App\Http\Controllers\Admin\AdvertisementController as UserAdvertisementController;
+use App\Http\Controllers\User\CategoryController as UserCategoryController;
+
 
 Auth::routes();
 
@@ -22,7 +25,10 @@ Route::get('user/posts/', [UserPostController::class, 'index'])->name('user.post
 Route::get('user/posts/{id}', [UserPostController::class, 'show'])->name('user.posts.show');
 Route::post('user/posts/store', [UserPostController::class, 'store'])->name('user.posts.store');
 Route::post('user/posts/storeComment', [UserPostController::class, 'storeComment'])->name('user.posts.storeComment');
+Route::get('/user/advertisements/{id}', [UserAdvertisementController::class, 'show'])->name('user.advertisements.show');
 
+//CATEGORY
+Route::get('user/categories/{id}', [UserCategoryController::class, 'index'])->name('user.categories.index');
 
 //ADMIN ROUTES
 Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->name('admin.posts.create');
@@ -38,6 +44,8 @@ Route::get('/admin/posts/{id}', [AdminPostController::class, 'show'])->name('adm
 Route::get('/admin/advertisements/{id}', [AdminAdvertisementController::class, 'show'])->name('admin.advertisements.show');
 Route::get('/admin/advertisements/{id}/edit', [AdminAdvertisementController::class, 'edit'])->name('admin.advertisements.edit');
 Route::post('/admin/advertisements/store', [AdminAdvertisementController::class, 'store'])->name('admin.advertisements.store');
+Route::post('admin/posts/storeComment', [AdminPostController::class, 'storeComment'])->name('admin.posts.storeComment');
+
 Route::put('/admin/advertisements/{id}', [AdminAdvertisementController::class, 'update'])->name('admin.advertisements.update');
 Route::delete('/admin/advertisements/{id}', [AdminAdvertisementController::class, 'destroy'])->name('admin.advertisements.destroy');
 
