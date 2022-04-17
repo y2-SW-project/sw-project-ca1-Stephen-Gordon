@@ -27,7 +27,7 @@
         @endif
 
         @if ($post->category_id ==3)
-        <p  class="text-primary">Here are the posts for Galway</p>
+        <p  class="text-primary">Here are the posts for Cork</p>
         @endif
 
         <div class="card margin-bottom-md">
@@ -47,7 +47,7 @@
 
     <!-- Side column -->
 
-    {{-- <div class="col-md-4">
+    <div class="col-md-4">
             @foreach ($advertisements as $advertisement)
             <div class="Adcard margin-bottom-md" data-id="{{$advertisement->id }}">
     <div class="h3 margin-bottom-md">{{$advertisement->title }}</div>
@@ -58,7 +58,7 @@
     </div>
 </div>
 @endforeach
-</div> --}}
+</div>
 </div>
 @endif
 @endsection

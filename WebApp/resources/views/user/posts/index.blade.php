@@ -6,10 +6,18 @@
     <p>there are no posts!</p>
     @else
     <div class="row justify-content-center margin-bottom-md">
-        <div class="col-md-12">
+        <div class="col-md-3">
             <a href="{{ route('user.posts.create') }}" class="btn float-right">Add</a>
         </div>
-
+        <div class="col-md-3">
+            <a href="{{ route('user.categories.index', 1 ) }}" class="btn float-right">Dublin</a>
+        </div>
+        <div class="col-md-3">
+            <a href="{{ route('user.categories.index', 2 ) }}" class="btn float-right">Cork</a>
+        </div>
+        <div class="col-md-3">
+            <a href="{{ route('user.categories.index', 3 ) }}" class="btn float-right">Galway</a>
+        </div>
     </div>
 
 

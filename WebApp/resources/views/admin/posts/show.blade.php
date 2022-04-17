@@ -47,6 +47,7 @@
 
 
     <!-- Comment Section -->
+    <div class="h6 font-colour-white padding-md">{{$count}} Comments</div>
 
     <div class="row justify-content-center margin-bottom-md margin-top-md">
         <div class="col-md-8">

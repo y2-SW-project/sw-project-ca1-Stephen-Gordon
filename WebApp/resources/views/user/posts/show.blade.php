@@ -45,6 +45,8 @@
 
 
     <!-- Comment Section -->
+    <div class="h6 font-colour-white padding-md">{{$count}} Comments</div>
+
     @foreach ($comments as $comment )
 
     <div class="row justify-content-center margin-bottom-md margin-top-md">
@@ -52,6 +54,7 @@
             <div data-id="{{$comment->id }}">
                 <div class="h3 padding-md">{{$comment->title }}</div>
                 <div class="p padding-md">{{$comment->body }}</div>
+
             </div>
         </div>
         <div class="col-md-4"></div>

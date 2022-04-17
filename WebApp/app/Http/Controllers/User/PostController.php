@@ -19,6 +19,7 @@ class PostController extends Controller
         $posts = Post::all();
         $advertisements = Advertisement::all();
         $comments = Comment::all();
+
         return view('user.posts.index', [
             'posts' => $posts,
             'comments' => $comments,
@@ -26,11 +27,26 @@ class PostController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function show($id)
+    {
+
+        $count = Comment::where('post_id', $id)->count();
+        $post = Post::findOrFail($id);
+        $comments = Comment::where('post_id', $id)->get();
+        $advertisements = Advertisement::all();
+        return view('user.posts.show',compact('count'), [
+            'post' => $post,
+            'comments' => $comments,
+            'advertisements' => $advertisements
+
+        ]);
+    }
+
+
+
+
+
     public function create()
     {
         return view('user.posts.create');
@@ -38,12 +54,7 @@ class PostController extends Controller
 
 
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         // when user clicks submit on the create view above
@@ -100,55 +111,9 @@ class PostController extends Controller
 
 
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $post = Post::findOrFail($id);
-        $comments = Comment::where('post_id', $id)->get();
-        $advertisements = Advertisement::all();
-        return view('user.posts.show', [
-            'post' => $post,
-            'comments' => $comments,
-            'advertisements' => $advertisements
-        ]);
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+
+
 }

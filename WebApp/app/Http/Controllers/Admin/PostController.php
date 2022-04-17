@@ -33,7 +33,19 @@ class PostController extends Controller
     }
 
 
+    public function show($id)
+    {
+        $count = Comment::where('post_id', $id)->count();
+        $post = Post::findOrFail($id);
+        $comments = Comment::where('post_id', $id)->get();
+        $advertisements = Advertisement::all();
 
+        return view('admin.posts.show',compact('count'), [
+            'post' => $post,
+            'comments' => $comments,
+            'advertisements' => $advertisements
+        ]);
+    }
 
 
     public function create()
@@ -96,17 +108,7 @@ class PostController extends Controller
     }
 
 
-    public function show($id)
-    {
-        $post = Post::findOrFail($id);
-        $comments = Comment::where('post_id', $id)->get();
-        $advertisements = Advertisement::all();
-        return view('admin.posts.show', [
-            'post' => $post,
-            'comments' => $comments,
-            'advertisements' => $advertisements
-        ]);
-    }
+
 
 
 

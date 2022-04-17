@@ -28,7 +28,7 @@ Route::post('user/posts/storeComment', [UserPostController::class, 'storeComment
 Route::get('/user/advertisements/{id}', [UserAdvertisementController::class, 'show'])->name('user.advertisements.show');
 
 //CATEGORY
-Route::get('user/categories/{id}', [UserCategoryController::class, 'index'])->name('user.categories.index');
+Route::get('user/categories/{category_id}', [UserCategoryController::class, 'index'])->name('user.categories.index');
 
 //ADMIN ROUTES
 Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->name('admin.posts.create');
