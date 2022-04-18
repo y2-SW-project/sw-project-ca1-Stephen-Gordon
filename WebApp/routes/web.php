@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\Admin\AdvertisementController as AdminAdvertisementController;
 use App\Http\Controllers\Admin\AdvertisementController as UserAdvertisementController;
 use App\Http\Controllers\User\CategoryController as UserCategoryController;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 
 
 Auth::routes();
@@ -27,8 +28,15 @@ Route::post('user/posts/store', [UserPostController::class, 'store'])->name('use
 Route::post('user/posts/storeComment', [UserPostController::class, 'storeComment'])->name('user.posts.storeComment');
 Route::get('/user/advertisements/{id}', [UserAdvertisementController::class, 'show'])->name('user.advertisements.show');
 
-//CATEGORY
-Route::get('user/categories/{category_id}', [UserCategoryController::class, 'index'])->name('user.categories.index');
+//USER CATEGORY
+Route::get('user/categories/dublin', [UserCategoryController::class, 'dublin'])->name('user.categories.dublin');
+Route::get('user/categories/cork', [UserCategoryController::class, 'cork'])->name('user.categories.cork');
+Route::get('user/categories/galway', [UserCategoryController::class, 'galway'])->name('user.categories.galway');
+
+//ADMIN CATEGORY
+Route::get('admin/categories/dublin', [AdminCategoryController::class, 'dublin'])->name('admin.categories.dublin');
+Route::get('admin/categories/cork', [AdminCategoryController::class, 'cork'])->name('admin.categories.cork');
+Route::get('admin/categories/galway', [AdminCategoryController::class, 'galway'])->name('admin.categories.galway');
 
 //ADMIN ROUTES
 Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->name('admin.posts.create');

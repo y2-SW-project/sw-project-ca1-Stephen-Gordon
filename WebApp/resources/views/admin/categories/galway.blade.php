@@ -14,21 +14,17 @@
 
 
 
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="text-primary">Galway Open Forum</h1>
+    </div>
+
+</div>
 <div class="row margin-bottom-md">
-    <div class="col-md-8">
+    <div class="col-md-8 col-sm-12">
 
         @foreach ($posts as $post)
-        @if ($post->category_id ==1)
-        <p  class="text-primary">Here are the posts for Dublin</p>
-        @endif
 
-        @if ($post->category_id ==2)
-        <p  class="text-primary">Here are the posts for Cork</p>
-        @endif
-
-        @if ($post->category_id ==3)
-        <p  class="text-primary">Here are the posts for Cork</p>
-        @endif
 
         <div class="card margin-bottom-md">
             <div data-id="{{$post->id }}">
@@ -47,7 +43,7 @@
 
     <!-- Side column -->
 
-    <div class="col-md-4">
+    <div class="col-md-4 col-sm-12">
             @foreach ($advertisements as $advertisement)
             <div class="Adcard margin-bottom-md" data-id="{{$advertisement->id }}">
     <div class="h3 margin-bottom-md">{{$advertisement->title }}</div>

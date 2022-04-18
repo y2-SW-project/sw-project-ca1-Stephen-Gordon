@@ -1,31 +1,3 @@
-{{--
-
-    Once the edit button is clicked in index
-
-    Then gets routed to the Edit route in Web.php
-
-    Then routes you to Edit function In the Controller
-
-    Edit Function Loads edit.blade.php
-
-    The post id gets passed through the function
-
-    The View and Form then gets populated with the posts's Id  data
-
-    The sumbit button goes to the update route. then goes to Web.php to find out where to go
-
-    The udate route goes to the update Function in the controller
-
-    the update function validates the data and saves it to the database
-
-    Once saved, index.php is then loaded again
-
-    Edit.php is loaded from the Controller
-    --}}
-
-
-
-
 @extends('layouts.app')
 
 @section ('content')

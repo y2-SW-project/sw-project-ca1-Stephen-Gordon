@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center margin-bottom-md">
-        <div class="col-md-8 card">
+        <div class="col-lg-8 col-md-12 col-sm-12 card">
             <div data-id="{{$post->id }}">
                 <div class="h3 padding-md">{{$post->title }}</div>
                 <div class="h5 padding-md">{{$post->description }}</div>
@@ -11,7 +11,7 @@
                 <div class="p padding-md">{{$post->name }}</div>
             </div>
         </div>
-        <div class="col-md-4 card margin-left"><form method="POST" action="{{ route('user.posts.storeComment')  }}">
+        <div class="col-lg-4 col-md-12 col-sm-12 card margin-left"><form method="POST" action="{{ route('user.posts.storeComment')  }}">
             <input type="hidden" name="_token" value="{{  csrf_token()  }}">
             <div class="form-group">
               <label for="title">Title</label>
@@ -35,22 +35,14 @@
     </div>
 
 
-    {{-- ADD COMMENT --}}
-    <div class="row justify-content-center margin-bottom-md margin-top-md">
-        <div class="col-md-8">
-
-        </div>
-
-    </div>
-
 
     <!-- Comment Section -->
-    <div class="h6 font-colour-white padding-md">{{$count}} Comments</div>
+    <div class="col-lg-12 col-md-12 col-sm-12 h6 font-colour-white padding-md">{{$count}} Comments</div>
 
     @foreach ($comments as $comment )
 
     <div class="row justify-content-center margin-bottom-md margin-top-md">
-        <div class="col-md-8 card">
+        <div class="col-lg-8 col-md-12 col-sm-12  card">
             <div data-id="{{$comment->id }}">
                 <div class="h3 padding-md">{{$comment->title }}</div>
                 <div class="p padding-md">{{$comment->body }}</div>

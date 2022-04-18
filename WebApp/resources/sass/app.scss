@@ -10,8 +10,11 @@
 $bg-colour: #222222;
 $bg-ad: #212131;
 $primary: #f2f2f2;
+$secondary:#B2B2B2;
 // Body
 $body-bg: #f8fafc;
+
+$purple: #B2A0F2;
 
 // Typography
 $font-family-sans-serif: 'Roboto',
@@ -55,6 +58,7 @@ $margin-left-md: 24;
     font-weight: 800;
     font-size: 40px;
     line-height: 150%;
+
 }
 
 .h3 {
@@ -71,6 +75,7 @@ $margin-left-md: 24;
     font-weight: 600;
     font-size: 28px;
     line-height: 150%;
+
 }
 
 .h5 {
@@ -79,6 +84,7 @@ $margin-left-md: 24;
     font-weight: 500;
     font-size: 23px;
     line-height: 150%;
+    color: $secondary;
 }
 
 .h6 {
@@ -147,6 +153,9 @@ $margin-left-md: 24;
 
 
 
+.purple {
+    color: $purple;
+}
 
 .button-main {
     background-color: $orange;
@@ -169,9 +178,9 @@ $margin-left-md: 24;
     border: 1px solid #FFE3D3;
     box-sizing: border-box;
     border-radius: 4px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    //display: flex;
+   // flex-direction: row;
+   // align-items: flex-start;
     padding: 8px 12px;
 }
 

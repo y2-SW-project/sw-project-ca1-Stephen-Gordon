@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
@@ -21,7 +21,7 @@ class CategoryController extends Controller
         $advertisements = Advertisement::all();
 
         $posts = Post::where('category_id', 1)->get();
-        return view('user.categories.dublin', [
+        return view('admin.categories.dublin', [
             'categorys' => $categories,
             'posts' => $posts,
             'advertisements' => $advertisements
@@ -37,7 +37,7 @@ class CategoryController extends Controller
         $advertisements = Advertisement::all();
 
         $posts = Post::where('category_id', 2)->get();
-        return view('user.categories.cork', [
+        return view('admin.categories.cork', [
             'categorys' => $categories,
             'posts' => $posts,
             'advertisements' => $advertisements
@@ -54,7 +54,7 @@ class CategoryController extends Controller
         $advertisements = Advertisement::all();
 
         $posts = Post::where('category_id', 3)->get();
-        return view('user.categories.galway', [
+        return view('admin.categories.galway', [
             'categorys' => $categories,
             'posts' => $posts,
             'advertisements' => $advertisements
@@ -79,7 +79,7 @@ class CategoryController extends Controller
 
         $post = Post::where('category_id', $id)->get();
         $comments = Comment::where('post_id', $id)->get();
-        return view('user.posts.show', [
+        return view('admin.posts.show', [
             'post' => $post,
             'comments' => $comments
         ]);

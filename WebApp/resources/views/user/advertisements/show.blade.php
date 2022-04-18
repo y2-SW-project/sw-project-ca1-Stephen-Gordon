@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center margin-bottom-md">
-        <div class="col-md-8 card">
+        <div class="col-md-8 col-sm-12 card">
             <div data-id="{{$advertisement->id }}">
                 <div class="h3 padding-md">{{$advertisement->title }}</div>
                 <div class="h5 padding-md">{{$advertisement->description }}</div>

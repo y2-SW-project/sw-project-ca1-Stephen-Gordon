@@ -11387,6 +11387,7 @@ textarea.form-control-lg {
   font-weight: 500;
   font-size: 23px;
   line-height: 150%;
+  color: #B2B2B2;
 }
 
 .h6 {
@@ -11445,6 +11446,10 @@ textarea.form-control-lg {
   background-color: #272627;
 }
 
+.purple {
+  color: #B2A0F2;
+}
+
 .button-main {
   background-color: #ff7324;
   color: #f2f2f2;
@@ -11465,9 +11470,6 @@ textarea.form-control-lg {
   border: 1px solid #FFE3D3;
   box-sizing: border-box;
   border-radius: 4px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   padding: 8px 12px;
 }
 
