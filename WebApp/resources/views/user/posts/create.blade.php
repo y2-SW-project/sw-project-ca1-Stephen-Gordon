@@ -24,16 +24,31 @@
                 <input type="hidden" name="_token" value="{{  csrf_token()  }}">
                 <div class="form-group">
                   <label for="title">Title</label>
-                  <input type="text" class="form-control form" id="title" name="title" value="{{ old('title') }}" />
+                  <input type="text" class="form" id="title" name="title" value="{{ old('title') }}" />
                 </div>
                 <div class="form-group">
                   <label for="description">Description</label>
-                  <input type="text" class="form-control form" id="description" name="description" value="{{ old('description') }}" />
+                  <input type="text" class="form" id="description" name="description" value="{{ old('description') }}" />
                 </div>
                 <div class="form-group">
-                  <label for="body">Body</label>
-                  <input type="text-area" class="form-control " rows="3" id="body" name="body" value="{{ old('body') }}" />
+                    <label for="body">Body</label>
+                    <textarea class="form font-colour-white" id="body" rows="10" name="body"
+                        value="{{ old('body') }}"></textarea>
                 </div>
+
+
+                <div class="form-group">
+                    <input type="checkbox" id="category_id" name="category_id" value="1">
+                    <label for="dublin">Dublin</label><br>
+
+                    <input type="checkbox" id="category_id" name="category_id" value="2">
+                    <label for="cork">Cork</label><br>
+
+                    <input type="checkbox" id="category_id" name="category_id" value="3">
+                    <label for="galway"> Galway</label>
+                </div>
+
+
                 <div class="form-group">
                   <label for="name"></label>
                   <input type="hidden" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}" />

@@ -22,19 +22,20 @@
                 <input type="hidden" name="_token" value="{{  csrf_token()  }}">
                 <div class="form-group">
                   <label for="title">Title</label>
-                  <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" />
+                  <input type="text" class="form" id="title" name="title" value="{{ old('title') }}" />
                 </div>
                 <div class="form-group">
                   <label for="description">Description</label>
-                  <input type="text" class="form-control" id="description" name="description" value="{{ old('description') }}" />
+                  <input type="text" class="form" id="description" name="description" value="{{ old('description') }}" />
                 </div>
                 <div class="form-group">
                   <label for="body">Body</label>
-                  <input type="text" class="form-control" id="body" name="body" value="{{ old('body') }}" />
+                  <textarea class="form" id="body" rows="10" name="body" value="{{ old('body') }}" ></textarea>
+
                 </div>
                 <div class="form-group">
                   <label for="business_name">Business Name</label>
-                  <input type="text" class="form-control" id="business_name" name="business_name" value="{{ old('business_name') }}" />
+                  <input type="text" class="form" id="business_name" name="business_name" value="{{ old('business_name') }}" />
                 </div>
 
               <a href="{{ route('admin.posts.index') }}" class="btn btn-outline">Cancel</a>

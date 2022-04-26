@@ -124,7 +124,7 @@ $margin-left-md: 24;
     transition: 0.3s;
 }
 
-.Adcard{
+.Adcard {
     padding: $padding-md;
     border: 1px solid #FFE3D3;
     border-radius: 4px;
@@ -180,9 +180,9 @@ $margin-left-md: 24;
     box-sizing: border-box;
     border-radius: 4px;
     //display: flex;
-   // flex-direction: row;
-   // align-items: flex-start;
-   color: black;
+    // flex-direction: row;
+    // align-items: flex-start;
+    color: black;
     padding: 8px 12px;
 }
 
@@ -225,43 +225,78 @@ $margin-left-md: 24;
     background-color: $bg-colour;
 }
 
+.whitespace {
+    white-space: pre-wrap;
+  }
 
 
 //FORM
-.form{
+.form {
     background: #222222;
-border: 1px solid #FFE3D3;
-box-sizing: border-box;
-border-radius: 9.24324px;
+    border: 1px solid #FFE3D3;
+    box-sizing: border-box;
+    border-radius: 8px;
+    color: $font-colour-white;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 100%;
+}
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
-margin: 6.16216px 0px;
-width: 100%;
+
+.form-control {
+    background: #222222;
+    border: 1px solid #FFE3D3;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 100%;
 
 
 }
+
 
 .input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-  }
+    background-color: #222222;
+    background: #222222;
+}
 
-.formbody{
+.input[type=textarea] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #222222;
+    background: #222222;
+}
+
+
+
+.formbody {
     position: static;
     width: 1108px;
     height: 352px;
     left: 0px;
     top: -46px;
 
+
     background: #222222;
     border: 1px solid #FFE3D3;
     box-sizing: border-box;
-    border-radius: 9.24324px;
+    border-radius: 8px;
 
     /* Inside auto layout */
     flex: none;

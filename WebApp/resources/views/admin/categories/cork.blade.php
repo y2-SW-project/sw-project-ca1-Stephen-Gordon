@@ -27,8 +27,8 @@
         <div class="card margin-bottom-md">
             <div data-id="{{$post->id }}">
                 <div class="h3 padding-md">{{$post->title }}</div>
-                <div class="h5 padding-bottom-md">{{$post->description }}</div>
-                <div class="p padding-bottom-md">{{$post->body }}</div>
+                <div class="h5 padding-bottom-md whitespace">{{$post->description }}</div>
+                <div class="p padding-bottom-md whitespace">{{$post->body }}</div>
                 <div class="p padding-bottom-md">{{$post->name }}</div>
                 <div class="padding-bottom-md">
                     <a href="{{ route('admin.posts.show', $post->id) }}" class="button-main">View Post</a>

@@ -11511,16 +11511,36 @@ textarea.form-control-lg {
   background-color: #222222;
 }
 
+.whitespace {
+  white-space: pre-wrap;
+}
+
 .form {
   background: #222222;
   border: 1px solid #FFE3D3;
   box-sizing: border-box;
-  border-radius: 9.24324px;
+  border-radius: 8px;
+  color: #f2f2f2;
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
-  margin: 6.16216px 0px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.form-control {
+  background: #222222;
+  border: 1px solid #FFE3D3;
+  box-sizing: border-box;
+  border-radius: 8px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  padding: 12px 20px;
+  margin: 8px 0;
   width: 100%;
 }
 
@@ -11529,6 +11549,17 @@ textarea.form-control-lg {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+  background-color: #222222;
+  background: #222222;
+}
+
+.input[type=textarea] {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #222222;
+  background: #222222;
 }
 
 .formbody {
@@ -11540,7 +11571,7 @@ textarea.form-control-lg {
   background: #222222;
   border: 1px solid #FFE3D3;
   box-sizing: border-box;
-  border-radius: 9.24324px;
+  border-radius: 8px;
   /* Inside auto layout */
   flex: none;
   order: 1;

@@ -15,8 +15,8 @@
             <div class="card margin-bottom-md">
                 <div data-id="{{$post->id }}">
                     <div class="h3 padding-md">{{$post->title }}</div>
-                    <div class="h5 padding-bottom-md">{{$post->description }}</div>
-                    <div class="p padding-bottom-md">{{$post->body }}</div>
+                    <div class="h5 padding-bottom-md whitespace">{{$post->description }}</div>
+                    <div class="p padding-bottom-md whitespace">{{$post->body }}</div>
                     <div class="p padding-bottom-md purple">{{$post->name }}</div>
                     <div class="padding-bottom-md">
                         <a href="{{ route('user.posts.show', $post->id) }}" class="button-main">View Post</a>
@@ -34,8 +34,8 @@
                 <div class="card margin-bottom-md">
                     <div class="margin-bottom-md">
                         <div class="margin-bottom-md ">
-                            <h4>Add a Post</h4>
-                            <a href="{{ route('user.posts.create') }}" class="btn">Go</a>
+
+                            <a href="{{ route('user.posts.create') }}" class="btn">Add a Post</a>
                         </div>
                         <div class="margin-bottom-md">
                             <a href="{{ route('user.categories.dublin', 1 ) }}" class="btn float-right">Visit Dublin Open Forum</a>

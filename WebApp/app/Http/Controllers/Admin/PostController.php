@@ -54,7 +54,32 @@ class PostController extends Controller
     }
 
 
+    public function update(Request $request, $id)
+    {
+        $post = Post::findOrFail($id);
+        $request->validate([
+            'title' => 'required',
+            'description' =>'required|max:300',
+            'body' => 'required',
+            'name' => 'required|min:3',
+            'category_id' => 'required|max:1000'
 
+        ]);
+
+
+
+        $post->title = $request->input('title');
+        $post->description = $request->input('description');
+        $post->body = $request->input('body');
+        $post->name = $request->input('name');
+       // $post->image_location = $request->input('image_location');
+        $post->category_id = $request->input('category_id');
+
+        $post->save();
+
+
+        return redirect()->route('admin.posts.index');
+    }
 
 
     public function store(Request $request)
@@ -63,8 +88,10 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'description' =>'required|max:300',
-            'body' => 'required|max:10000',
-            'name' => 'required|min:3'
+            'body' => 'required',
+            'name' => 'required|min:3',
+           // 'image_location' => 'max:1000',
+            'category_id' => 'required|max:1000'
         ]);
 
 
@@ -75,6 +102,8 @@ class PostController extends Controller
         $post->description = $request->input('description');
         $post->body = $request->input('body');
         $post->name = $request->input('name');
+        $post->category_id = $request->input('category_id');
+        //$post->image_location = $request->input('image_location');
 
         $post->save();
 
@@ -87,16 +116,16 @@ class PostController extends Controller
 
         $request->validate([
             'title' => 'required',
-            'body' => 'required|max:10000',
+            'body' => 'required',
             'user_id' => 'required',
             'post_id' => 'required',
-            'name' => 'required'
-
+            'name' => 'required',
+          //  'image_location' => 'max:1000',
+            'category_id' => 'required|max:1000'
 
         ]);
 
 
-       // $comments = Comment::where('post_id', $id)->get();
         $comments = new Comment();
         $comments->title = $request->input('title');
         $comments->body = $request->input('body');
@@ -105,7 +134,6 @@ class PostController extends Controller
         $comments->name = $request->input('name');
 
 
-       // $comments->post_id = $request->input('post_id');
         $comments->save();
 
         return redirect()->route('user.posts.index');
@@ -118,14 +146,9 @@ class PostController extends Controller
 
     public function edit($id)
     {
-        // get the customer by ID from the Database. passes through the function
-
-        //Find or Fail check is it exists
 
         $post = Post::findOrFail($id);
 
-        // Load the edit view and pass the customer to
-        // that view
         return view('admin.posts.edit', [
             'post' => $post
         ]);
@@ -133,33 +156,7 @@ class PostController extends Controller
 
 
 
-      public function update(Request $request, $id)
-    {
 
-        // first get the existing customer that the user is update
-        //Id is passed through to make sure we update the right customer
-
-        $post = Post::findOrFail($id);
-        $request->validate([
-            'title' => 'required',
-            'description' =>'required|max:300',
-            'body' => 'required|max:10000',
-            'name' => 'required|min:3'
-        ]);
-
-
-
-        // if validation passes then update existing customer
-        $post->title = $request->input('title');
-        $post->description = $request->input('description');
-        $post->body = $request->input('body');
-        $post->name = $request->input('name');
-        //$customer->image = $request->input('image');
-        $post->save();
-
-
-        return redirect()->route('admin.posts.index');
-    }
 
 
 

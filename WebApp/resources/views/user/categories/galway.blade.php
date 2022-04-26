@@ -6,9 +6,7 @@
     <p>there are no posts!</p>
     @else
     <div class="row justify-content-center margin-bottom-md">
-        {{-- <div class="col-md-12">
-            <a href="{{ route('user.posts.create') }}" class="btn float-right">Add</a>
-    </div> --}}
+
 
 </div>
 
@@ -16,7 +14,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h1 class="text-primary padding-bottom-md">Cork Open Forum</h1>
+        <h1 class="text-primary padding-bottom-md">Galway Open Forum</h1>
     </div>
 
 </div>
@@ -29,8 +27,8 @@
         <div class="card margin-bottom-md">
             <div data-id="{{$post->id }}">
                 <div class="h3 padding-md">{{$post->title }}</div>
-                <div class="h5 padding-bottom-md">{{$post->description }}</div>
-                <div class="p padding-bottom-md">{{$post->body }}</div>
+                <div class="h5 padding-bottom-md whitespace">{{$post->description }}</div>
+                <div class="p padding-bottom-md whitespace">{{$post->body }}</div>
                 <div class="p padding-bottom-md">{{$post->name }}</div>
                 <div class="padding-bottom-md">
                     <a href="{{ route('user.posts.show', $post->id) }}" class="button-main">View Post</a>

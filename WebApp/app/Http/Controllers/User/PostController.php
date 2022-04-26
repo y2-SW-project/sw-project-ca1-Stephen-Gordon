@@ -62,8 +62,9 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'description' =>'required|max:300',
-            'body' => 'required|max:10000',
-            'name' => 'required|min:3'
+            'body' => 'required',
+            'name' => 'required|min:3',
+            'category_id' => 'required|max:1000'
         ]);
 
 
@@ -75,7 +76,7 @@ class PostController extends Controller
         $post->description = $request->input('description');
         $post->body = $request->input('body');
         $post->name = $request->input('name');
-        //$customer->image_location =  $filename;
+        $post->category_id = $request->input('category_id');
         $post->save();
 
         return redirect()->route('user.posts.index');
@@ -89,7 +90,7 @@ class PostController extends Controller
         // the customer will be stored in the DB
         $request->validate([
             'title' => 'required',
-            'body' => 'required|max:10000',
+            'body' => 'required',
             'user_id' => 'required',
             'post_id' => 'required',
             'name' => 'required'

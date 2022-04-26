@@ -6,8 +6,8 @@
         <div class="col-md-8 card">
             <div data-id="{{$advertisement->id }}">
                 <div class="h3 padding-md">{{$advertisement->title }}</div>
-                <div class="h5 padding-md">{{$advertisement->description }}</div>
-                <div class="p padding-md">{{$advertisement->body }}</div>
+                <div class="h5 padding-md whitespace">{{$advertisement->description }}</div>
+                <div class="p padding-md whitespace">{{$advertisement->body }}</div>
                 <div class="p padding-md">{{$advertisement->business_name }}</div>
             </div>
         </div>

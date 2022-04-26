@@ -6,8 +6,8 @@
         <div class="col-md-8">
             <div class="card" data-id="{{$post->id }}">
                 <div class="h3 padding-md">{{$post->title }}</div>
-                <div class="h5 padding-md">{{$post->description }}</div>
-                <div class="p padding-md">{{$post->body }}</div>
+                <div class="h5 padding-md whitespace">{{$post->description }}</div>
+                <div class="p padding-md whitespace">{{$post->body }}</div>
                 <div class="p padding-md">{{$post->name }}</div>
             </div>
         </div>
@@ -26,7 +26,6 @@
                     </div>
                     <div class="form-group">
                         <label for="body">Body</label>
-                       {{--  <input type="text" class="form-control " id="body" name="body" value="{{ old('body') }}" /> --}}
                        <textarea class="form font-colour-white form" id="body" rows="10" name="body" value="{{ old('body') }}" ></textarea>
 
                     </div>
