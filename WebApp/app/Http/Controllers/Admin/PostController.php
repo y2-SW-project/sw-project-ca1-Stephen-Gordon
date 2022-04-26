@@ -89,7 +89,9 @@ class PostController extends Controller
             'title' => 'required',
             'body' => 'required|max:10000',
             'user_id' => 'required',
-            'post_id' => 'required'
+            'post_id' => 'required',
+            'name' => 'required'
+
 
         ]);
 
@@ -100,6 +102,8 @@ class PostController extends Controller
         $comments->body = $request->input('body');
         $comments->user_id = $request->input('user_id');
         $comments->post_id = $request->input('post_id');
+        $comments->name = $request->input('name');
+
 
        // $comments->post_id = $request->input('post_id');
         $comments->save();

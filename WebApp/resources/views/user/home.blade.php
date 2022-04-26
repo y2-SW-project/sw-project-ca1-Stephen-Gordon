@@ -14,9 +14,10 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in as an ordinary user!') }}
+                    <div class="btn">
+                        <a href="{{route('admin.posts.index')}}">View All Posts</a>
 
-                    {{-- <a href="{{route('user.customers.index')}}">View All customers</a> --}}
+                       </div>
                 </div>
             </div>
         </div>

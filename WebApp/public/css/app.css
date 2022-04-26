@@ -11463,6 +11463,7 @@ textarea.form-control-lg {
   padding: 0.375rem 0.75rem;
   font-size: 0.9rem;
   border-radius: 0.25rem;
+  color: black;
 }
 
 .btn {
@@ -11470,6 +11471,7 @@ textarea.form-control-lg {
   border: 1px solid #FFE3D3;
   box-sizing: border-box;
   border-radius: 4px;
+  color: black;
   padding: 8px 12px;
 }
 
@@ -11519,6 +11521,14 @@ textarea.form-control-lg {
   order: 1;
   flex-grow: 0;
   margin: 6.16216px 0px;
+  width: 100%;
+}
+
+.input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 .formbody {

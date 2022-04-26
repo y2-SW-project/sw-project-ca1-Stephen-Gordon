@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <div class="btn">
+                        <a href="{{route('user.posts.index')}}">View All Posts</a>
+
+                    </div>
                 </div>
             </div>
         </div>

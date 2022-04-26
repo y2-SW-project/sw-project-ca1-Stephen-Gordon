@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container bg-sec">
     @if (count($posts)===0)
     <p>there are no posts!</p>
     @else
@@ -15,7 +15,7 @@
 
 <div class="row">
     <div class="col-md-12 col-sm-12">
-        <h1 class="text-primary">Cork Open Forum</h1>
+        <h1 class="text-primary padding-bottom-md">Cork Open Forum</h1>
     </div>
 
 </div>
