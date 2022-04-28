@@ -43,7 +43,7 @@
                         <div class="margin-bottom-md">
                             <a href="{{ route('user.categories.cork', 2 ) }}" class="btn float-right">Visit Cork Open Forum</a>
                         </div>
-                        <div class="margin-bottom-md">
+                        <div class="">
                             <a href="{{ route('user.categories.galway', 3 ) }}" class="btn float-right">Visit Galway Open Forum</a>
                         </div>
                     </div>

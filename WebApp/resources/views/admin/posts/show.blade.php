@@ -3,12 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center margin-bottom-md">
-        <div class="col-md-8">
+        <div class="col-lg-8 col-md-12 col-sm-12">
             <div class="card" data-id="{{$post->id }}">
                 <div class="h3 padding-md">{{$post->title }}</div>
                 <div class="h5 padding-md whitespace">{{$post->description }}</div>
                 <div class="p padding-md whitespace">{{$post->body }}</div>
-                <div class="p padding-md">{{$post->name }}</div>
+                <div class="p padding-md purple">{{$post->name }}</div>
             </div>
         </div>
 
@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                         <label for="body">Body</label>
-                       <textarea class="form font-colour-white form" id="body" rows="10" name="body" value="{{ old('body') }}" ></textarea>
+                       <textarea class="form font-colour-white" id="body" rows="10" name="body" value="{{ old('body') }}" ></textarea>
 
                     </div>
                     <div class="form-group">
@@ -43,7 +43,7 @@
                         <input type="hidden" class="form-control" id="name" name="name"
                             value="{{ Auth::user()->name }}" />
                     </div>
-                    <a href="{{ route('admin.posts.index') }}" class="btn btn-outline">Cancel</a>
+                    <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-outline">Cancel</a>
                     <button type="submit" class="btn btn-primary float-right">Submit</button>
                 </form>
             </div>
@@ -53,7 +53,7 @@
 
 
     <!-- Comment Section -->
-    <div class="h6 font-colour-white padding-md">{{$count}} Comments</div>
+    <div class="col-lg-12 col-md-12 col-sm-12 h6 font-colour-white padding-md">{{$count}} Comments</div>
 
     <div class="row justify-content-center margin-bottom-md margin-top-md">
         <div class="col-md-8">

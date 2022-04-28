@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="card">
-                <div class="card-header">
+                <div class="h4 card-header">
                     Add a new post
                 </div>
                 <div class="card-body">
@@ -52,11 +52,7 @@
                             <input type="hidden" class="form-control" id="name" name="name"
                                 value="{{ Auth::user()->name }}" />
                         </div>
-                        {{-- <div class="form-group">
-                            <label for="category_id"></label>
-                            <input type="hidden" class="form-control" id="category_id" name="category_id"
-                                value="1" />
-                        </div> --}}
+
                         <a href="{{ route('admin.posts.index') }}" class="btn btn-outline">Cancel</a>
                         <button type="submit" class="btn btn-primary float-right">Submit</button>
                     </form>

@@ -54,7 +54,7 @@
                         <div class="margin-bottom-md">
                             <a href="{{ route('admin.categories.cork', 2 ) }}" class="btn float-right">Visit Cork Open Forum</a>
                         </div>
-                        <div class="margin-bottom-md">
+                        <div class="">
                             <a href="{{ route('admin.categories.galway', 3 ) }}" class="btn float-right">Visit Galway Open Forum</a>
                         </div>
                     </div>
@@ -66,6 +66,7 @@
                     <div class="h5 margin-bottom-md">{{$advertisement->description }}</div>
 
                     <div class="">
+                        <a href="{{ route('admin.advertisements.edit', $advertisement->id) }}" class="button-main">Edit</a>
                         <a href="{{ route('admin.advertisements.show', $advertisement->id) }}" class="button-main">View Advertisement</a>
                     </div>
                 </div>

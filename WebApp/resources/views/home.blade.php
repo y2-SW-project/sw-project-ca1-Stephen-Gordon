@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="h1">The Open Forum</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,8 +14,8 @@
                         </div>
                     @endif
 
-                    <div class="btn">
-                        <a href="{{route('user.posts.index')}}">View All Posts</a>
+                    <div class="button-main ">
+                        <a href="{{route('user.posts.index')}}" class="">View All Posts</a>
 
                     </div>
                 </div>

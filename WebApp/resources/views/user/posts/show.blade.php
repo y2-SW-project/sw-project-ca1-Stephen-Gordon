@@ -8,7 +8,7 @@
                 <div class="h3 padding-md">{{$post->title }}</div>
                 <div class="h5 padding-md whitespace">{{$post->description }}</div>
                 <div class="p padding-md whitespace">{{$post->body }}</div>
-                <div class="p padding-md">{{$post->name }}</div>
+                <div class="p padding-md purple">{{$post->name }}</div>
             </div>
         </div>
 
